@@ -1807,6 +1807,9 @@ tile(Monitor *m)
 	if (n == 0)
 		return;
 
+	/* override layout symbol */
+	snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]=", n);
+
 	if (n > m->nmaster)
 		mw = m->nmaster ? m->ww * m->mfact : 0;
 	else
